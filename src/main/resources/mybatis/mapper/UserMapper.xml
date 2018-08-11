@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yqy.mapper.UserMapper">
+
+	<!-- <cache type="com.yqy.config.mybatis.MybatisRedisCache"> <property name="eviction" 
+		value="LRU" /> <property name="flushInterval" value="6000000" /> <property 
+		name="size" value="1024" /> <property name="readOnly" value="false" /> </cache> -->
+	<!-- <cache /> -->
+
+	<!-- LRU – 最近最少使用的:移除最长时间不被使用的对象。 FIFO – 先进先出:按对象进入缓存的顺序来移除它们。 SOFT – 软引用:移除基于垃圾回收器状态和软引用规则的对象。 
+		WEAK – 弱引用:更积极地移除基于垃圾收集器状态和弱引用规则的对象。 -->
+	<!-- <cache eviction="FIFO" flushInterval="6000" size="512" readOnly="true" /> -->
+
+	<resultMap id="BaseResultMap" type="com.yqy.model.User">
+		<id column="id" property="id" jdbcType="VARCHAR" />
+		<result column="username" property="userName" jdbcType="VARCHAR" />
+		<result column="userpass" property="userPass" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		id, username, userpass
+	</sql>
+
+	<!-- 对这个语句useCache="true"默认是true，可以不写 -->
+	<select id="getAll" resultMap="BaseResultMap" useCache="true">
+		select
+		<include refid="Base_Column_List" />
+		from user
+	</select>
+	
+	<insert id="addUser" parameterType="com.yqy.model.User">
+		insert into user(username,userpass) values(#{userName},#{userPass})
+	</insert>
+
+	<!-- 对这个语句禁用二级缓存 -->
+	<!-- <select id="findByPage" resultMap="BaseResultMap" useCache="false">
+		select
+		<include refid="Base_Column_List" />
+		from tuser
+	</select> -->
+</mapper>

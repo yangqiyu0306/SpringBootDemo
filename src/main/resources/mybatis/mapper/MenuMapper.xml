@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yqy.mapper.MenuMapper">
+
+	<resultMap id="BaseResultMap" type="com.yqy.model.Menu">
+		<result column="c_op_cde" property="COpCde"  />
+		<result column="c_parent_cde" property="CParentCde"  />
+		<result column="c_op_nme" property="COpNme" />
+		<result column="c_op_act" property="COpAct" />
+		<result column="n_op_order" property="NOpOrder" />
+		<result column="C_Icon" property="CIcon" />
+	</resultMap>
+
+	<select id="findMenuInfo" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select c_op_cde,c_parent_cde,c_op_nme,c_op_act,n_op_order,c_icon from web_menu
+		order by n_op_order
+	</select>
+
+</mapper>
