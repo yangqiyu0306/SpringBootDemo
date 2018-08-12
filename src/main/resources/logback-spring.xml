@@ -43,8 +43,8 @@
 
     <springProfile name="junit">
         <root level="INFO">
-            <appender-ref ref="consoleAppender" />
-            <!-- <appender-ref ref="asyncFileAppender" /> -->
+            <!-- <appender-ref ref="consoleAppender" /> -->
+            <appender-ref ref="asyncFileAppender" />
         </root>
     </springProfile>
     <springProfile name="test">

@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
 //		System.out.println("------------------------------------------------------------");
 //		System.out.println(list.size());
 //		
-//		list.forEach(o ->{System.out.println(o);});
+		list.forEach(o ->{System.out.println(o);});
 		
 		log.info("====================log.info");
 		log.debug("====================log.debug");
