@@ -40,11 +40,6 @@ public class UserServiceImpl implements UserService {
 //		
 		list.forEach(o ->{System.out.println(o);});
 		
-		log.info("====================log.info");
-		log.debug("====================log.debug");
-		log.error("====================log.error");
-		log.warn("====================log.warn");
-		
 		return list;
 	}
 
