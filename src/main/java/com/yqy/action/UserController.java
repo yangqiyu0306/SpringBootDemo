@@ -27,6 +27,11 @@ public class UserController {
 		return userService.getMenu();
 	}
 	
+	@RequestMapping("getMenu2")
+	private List<Menu> getMenu2(){
+		return userService.getMenu();
+	}
+	
 	@RequestMapping("addUser")
 	private int addUser(){
 		
