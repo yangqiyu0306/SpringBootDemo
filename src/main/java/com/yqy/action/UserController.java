@@ -37,6 +37,7 @@ public class UserController {
 		user.setUserPass("ccc");
 		user.setUserPass("ccc");
 		user.setUserPass("ccc");
+		user.setUserPass("ccc");
 		
 		return userService.addUser(user);
 	}
