@@ -22,6 +22,11 @@ public class UserController {
 		return userService.getAll();
 	}
 	
+	@RequestMapping("getAll2")
+	private List<User> getAll2(){
+		return userService.getAll();
+	}
+	
 	@RequestMapping("getMenu")
 	private List<Menu> getMenu(){
 		return userService.getMenu();
