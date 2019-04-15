@@ -38,7 +38,6 @@ public class UserController {
 		User user = new User();
 		
 		user.setUserName("yqy");
-		user.setUserPass("ccc");
 		
 		return userService.addUser(user);
 	}
